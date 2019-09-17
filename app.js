@@ -33,7 +33,11 @@ app.use(express.static(__dirname +"/public"));
 var mongoose = require("mongoose");
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb://localhost:27017/yelpcamp",{ useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost:27017/yelpcamp",{ useNewUrlParser: true });
+mongoose.connect('mongodb+srv://saie12:March2019@cluster0-w6aoi.mongodb.net/test?retryWrites=true&w=majority',{
+    useNewUrlParser:true,
+    useCreateIndex:true
+});
 
 app.set("view engine","ejs");
 
